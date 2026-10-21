@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholarship Catalog & Matches — SCHOLAR GATE</title>
+  <meta name="description" content="Browse verified school scholarship schemes across Andhra Pradesh, Telangana, and Central Ministries. Filter by class, community, and eligibility status.">
+  <meta name="keywords" content="AP Scholarships, Telangana ePASS, NSP Schemes, Pre-Matric Scholarships India, Central Government Scholarships">
+  <meta name="author" content="SCHOLAR GATE CSP Team">
+
+  <!-- Google Fonts: Outfit and Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="lang-en">
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wrapper" id="brandLink">
+        <div class="brand-logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18C5 19.94 8.13 22 12 22C15.87 22 19 19.94 19 17.18V13.18L12 17L5 13.18Z" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title" data-i18n="brandTitle">SCHOLAR GATE</span>
+          <span class="brand-subtitle" data-i18n="brandSubtitle">Scholarship & Sponsorship Portal</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link" data-nav="home" data-i18n="navHome">Home</a>
+        <a href="find-scholarships.html" class="nav-link" data-nav="find" data-i18n="navFind">Find Scholarships</a>
+        <a href="scholarships.html" class="nav-link active" data-nav="results" data-i18n="navBrowse">Browse Schemes</a>
+        <a href="saved.html" class="nav-link" data-nav="saved">
+          <span data-i18n="navSaved">Saved</span>
+          <span class="saved-count-badge" id="savedCountBadge">0</span>
+        </a>
+        <a href="faq.html" class="nav-link" data-nav="faq" data-i18n="navFaq">FAQ & Help</a>
+        <a href="about.html" class="nav-link" data-nav="about" data-i18n="navAbout">About CSP</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Language Toggle -->
+        <button type="button" class="lang-toggle-btn" id="langToggleBtn" title="Switch language to Telugu / ఇంగ్లీష్ మార్చండి">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span id="langLabel">తెలుగు</span>
+        </button>
+
+        <!-- Prototype Data Admin Button -->
+        <button type="button" class="btn-secondary" id="openAdminModalBtn" style="padding: 0.4rem 0.8rem; font-size: 0.82rem;" title="Demo Prototype Data Inspection">
+          ⚙️ Demo Data
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Subpage Header Banner -->
+  <section class="subpage-header">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html" data-i18n="navHome">Home</a>
+        <span>/</span>
+        <span data-i18n="navBrowse">Browse Schemes</span>
+      </div>
+      <h1 class="subpage-title" data-i18n="resultsTitle">Scholarship Catalog & Personalized Matches</h1>
+      <p class="subpage-subtitle">Explore 10 verified pre-matric schemes across Andhra Pradesh, Telangana, and Central Ministries.</p>
+    </div>
+  </section>
+
+  <!-- Demo Profile Quick Bar -->
+  <section class="demo-bar-wrapper">
+    <div class="container demo-bar">
+      <span class="demo-bar-label">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h2v2h-2zm0-10h2v8h-2z"/>
+        </svg>
+        <span data-i18n="demoBarTitle">Try Demonstration Profiles:</span>
+      </span>
+      <button type="button" class="demo-chip" data-profile="profile_a" data-i18n="demoProfileA">Profile A: AP Rural SC (Class 8)</button>
+      <button type="button" class="demo-chip" data-profile="profile_b" data-i18n="demoProfileB">Profile B: Telangana ST (Class 10)</button>
+      <button type="button" class="demo-chip" data-profile="profile_c" data-i18n="demoProfileC">Profile C: Disability Support (Class 9)</button>
+      <button type="button" class="demo-chip" data-profile="profile_d" data-i18n="demoProfileD">Profile D: Beedi Worker Parent (Class 7)</button>
+      <button type="button" class="demo-chip" data-profile="profile_e" data-i18n="demoProfileE">Profile E: Higher Income (Class 11)</button>
+    </div>
+  </section>
+
+  <!-- Main Content Body -->
+  <main class="results-section" id="results">
+    <div class="container">
+      
+      <!-- Active Student Profile Evaluation Banner -->
+      <div id="activeProfileBanner" class="active-profile-banner">
+        <!-- Rendered by app.js (shows either active profile pills + edit button OR general catalog prompt) -->
+      </div>
+
+      <!-- Mandatory Preliminary Guidance Disclaimer -->
+      <div class="preliminary-guidance-banner" role="alert">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+        <span data-i18n="resultsDisclaimer">Preliminary Guidance: Matches are calculated from your profile inputs. Final eligibility is determined exclusively by the respective government department.</span>
+      </div>
+
+      <!-- Live Search Bar -->
+      <div style="margin-bottom: 1.5rem;">
+        <div class="hero-search-box" style="max-width: 100%; box-shadow: var(--shadow-sm);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" class="hero-search-input" id="heroSearchInput" placeholder="Search by scholarship title, ministry, benefit, or keyword..." data-i18n-ph="heroQuickSearchPlaceholder">
+        </div>
+      </div>
+
+      <!-- Filters & Sorting Toolbar -->
+      <div class="results-controls-bar">
+        <div class="filter-group-row">
+          <!-- State Filter -->
+          <select id="filterState" class="filter-select">
+            <option value="" data-i18n="filterStateAll">All States</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Telangana">Telangana</option>
+            <option value="All India">All India Central</option>
+          </select>
+
+          <!-- Class Filter -->
+          <select id="filterClass" class="filter-select">
+            <option value="" data-i18n="filterClassAll">All Classes</option>
+            <option value="5">Class 5</option>
+            <option value="6">Class 6</option>
+            <option value="7">Class 7</option>
+            <option value="8">Class 8</option>
+            <option value="9">Class 9</option>
+            <option value="10">Class 10</option>
+            <option value="11">Class 11</option>
+            <option value="12">Class 12</option>
+          </select>
+
+          <!-- Category Filter -->
+          <select id="filterCategory" class="filter-select">
+            <option value="" data-i18n="filterCategoryAll">All Categories</option>
+            <option value="SC">SC</option>
+            <option value="ST">ST</option>
+            <option value="OBC">OBC / BC</option>
+            <option value="Minority">Minority</option>
+            <option value="General">General</option>
+          </select>
+
+          <!-- Status Filter -->
+          <select id="filterStatus" class="filter-select">
+            <option value="" data-i18n="filterStatusAll">All Statuses</option>
+            <option value="potential_match" data-i18n="badgePotentialMatch">Potential Match</option>
+            <option value="needs_verification" data-i18n="badgeNeedsVerification">Needs Verification</option>
+            <option value="not_matched" data-i18n="badgeNotMatched">Not Currently Matched</option>
+          </select>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:1rem; flex-wrap: wrap;">
+          <!-- Sort Options -->
+          <select id="sortOption" class="filter-select">
+            <option value="score" data-i18n="sortScore">Sort: Best Portal Match</option>
+            <option value="name" data-i18n="sortName">Sort: Name (A-Z)</option>
+            <option value="class" data-i18n="sortClass">Sort: Class Level</option>
+          </select>
+
+          <span class="results-count-text" id="resultsCount">Showing 0 schemes</span>
+        </div>
+      </div>
+
+      <!-- Cards Grid Container -->
+      <div class="cards-grid" id="scholarshipsContainer">
+        <!-- Dynamically populated via app.js -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Scholarship Details & Checklist Modal -->
+  <div class="modal-backdrop" id="detailsModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-header-text">
+          <span class="match-status-badge" id="modalStatusBadge" style="margin-bottom:0.5rem;">Potential Match</span>
+          <h3 class="modal-title" id="modalTitle">Scholarship Title</h3>
+          <p class="modal-subtitle" id="modalAuthority">Administering Authority</p>
+        </div>
+        <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close details popup">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Match Explanation -->
+        <div class="card-explanation-box" id="modalExplanationBox"></div>
+
+        <!-- Purpose & Benefits -->
+        <div class="modal-section">
+          <h4 class="modal-section-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <span data-i18n="modalPurpose">Scheme Purpose & Overview</span>
+          </h4>
+          <p id="modalPurposeText" style="font-size:0.95rem; color:var(--text-main); line-height:1.6;"></p>
+        </div>
+
+        <!-- Academic & School Conditions -->
+        <div class="modal-section">
+          <h4 class="modal-section-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            <span data-i18n="modalAcademicConditions">Academic & School Conditions</span>
+          </h4>
+          <ul id="modalAcademicList" class="steps-list"></ul>
+        </div>
+
+        <!-- Document Checklist (LocalStorage Saved) -->
+        <div class="modal-section">
+          <div class="modal-checklist-wrapper">
+            <div class="checklist-header">
+              <div>
+                <h4 style="font-size: 1rem; font-weight: 700; color: var(--primary-navy);" data-i18n="modalChecklistTitle">Document Checklist (Save Your Progress)</h4>
+                <p style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="modalChecklistSubtitle">Commonly requested documents — verify official scheme guidelines.</p>
+              </div>
+              <button type="button" class="btn-secondary" id="resetChecklistBtn" style="padding: 0.35rem 0.75rem; font-size: 0.78rem;" data-i18n="btnResetChecklist">Reset Checklist</button>
+            </div>
+            <div class="checklist-items-list" id="modalChecklistItems"></div>
+          </div>
+        </div>
+
+        <!-- How To Apply -->
+        <div class="modal-section">
+          <h4 class="modal-section-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span data-i18n="modalHowToApply">Step-by-Step Official Application Process</span>
+          </h4>
+          <ol id="modalHowToApplyList" class="steps-list" style="padding-left: 1.5rem;"></ol>
+        </div>
+
+        <!-- Official Links -->
+        <div class="official-links-box">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="link-button-official" id="modalOfficialInfoLink">
+            <span style="display:flex; align-items:center; gap:0.4rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              <span data-i18n="modalOfficialInfo">Official Scheme Information Website</span>
+            </span>
+            <span>↗</span>
+          </a>
+
+          <a href="#" target="_blank" rel="noopener noreferrer" class="link-button-official" id="modalOfficialApplyLink" style="background:var(--primary-blue); color:#FFFFFF; border-color:var(--primary-blue);">
+            <span style="display:flex; align-items:center; gap:0.4rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+              <strong data-i18n="modalOfficialApply">Official Online Application Portal</strong>
+            </span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <div style="font-size:0.8rem; color:#64748B; background:#F1F5F9; padding:0.75rem 1rem; border-radius:var(--radius-sm);" data-i18n="modalNotice">
+          Note: Government guidelines and portal application dates change periodically. Always verify with your school headmaster or official portal before applying.
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-verified-info">
+          <span data-i18n="modalLastVerified">Information Last Verified on:</span>
+          <strong id="modalLastVerifiedDate">2026-03-15</strong>
+        </div>
+        <button type="button" class="btn-secondary" id="modalCloseFooterBtn" data-i18n="btnClose">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prototype Demo Data Modal -->
+  <div class="modal-backdrop" id="adminModal" role="dialog" aria-modal="true">
+    <div class="modal-container" style="max-width: 720px;">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title">Demo Prototype Data Management</h3>
+          <p class="modal-subtitle">Evaluate, inspect or edit scholarship records locally (Developer / Demonstration Mode)</p>
+        </div>
+        <button type="button" class="modal-close-btn" id="adminModalCloseBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="background:#FFFBEB; border:1px solid #FDE68A; padding:0.75rem 1rem; border-radius:var(--radius-md); font-size:0.85rem; color:#92400E; margin-bottom:1rem;">
+          <strong>Prototype Disclaimer:</strong> This demonstration manager runs completely in client-side memory and local storage. No unauthenticated changes are sent to a live production database.
+        </div>
+        
+        <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.4rem;">Current Active Dataset (JSON Inspection)</h4>
+        <div class="admin-json-box" id="adminJsonView"></div>
+
+        <div style="display:flex; gap:0.75rem; margin-top:1.25rem;">
+          <button type="button" class="btn-primary" id="adminAddMockBtn" style="font-size:0.85rem; padding:0.6rem 1rem;">
+            + Add Test Scheme Record
+          </button>
+          <button type="button" class="btn-secondary" id="adminResetDatasetBtn" style="font-size:0.85rem; padding:0.6rem 1rem;">
+            Reset to Default Dataset
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span style="font-size:0.8rem; color:var(--text-muted);">Changes persist locally for this browser session.</span>
+        <button type="button" class="btn-secondary" id="adminModalCloseFooterBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4 class="footer-col-title" data-i18n="footerAboutTitle">About SCHOLAR GATE</h4>
+        <p style="font-size: 0.9rem; line-height: 1.6; color: #94A3B8; margin-bottom: 1rem;" data-i18n="footerAboutDesc">
+          SCHOLAR GATE is a student-initiated College & Community Service Project (CSP) aimed at democratizing access to verified Indian school scholarships.
+        </p>
+        <div style="font-size: 0.85rem; color: #38BDF8;">
+          Primary Focus: Andhra Pradesh, Telangana & All India Central Government Schemes
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title" data-i18n="footerPortalsTitle">Official Portals</h4>
+        <ul class="footer-links-list">
+          <li><a href="https://scholarships.gov.in" target="_blank" rel="noopener noreferrer">National Scholarship Portal (NSP) ↗</a></li>
+          <li><a href="https://jnanabhumi.ap.gov.in" target="_blank" rel="noopener noreferrer">Andhra Pradesh JnanaBhumi ↗</a></li>
+          <li><a href="https://telanganaepass.cgg.gov.in" target="_blank" rel="noopener noreferrer">Telangana ePASS ↗</a></li>
+          <li><a href="https://socialjustice.gov.in" target="_blank" rel="noopener noreferrer">Ministry of Social Justice ↗</a></li>
+          <li><a href="https://tribal.nic.in" target="_blank" rel="noopener noreferrer">Ministry of Tribal Affairs ↗</a></li>
+          <li><a href="https://depwd.gov.in" target="_blank" rel="noopener noreferrer">Dept of Persons with Disabilities ↗</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title" data-i18n="footerDisclaimerTitle">Academic Project Disclaimer</h4>
+        <div class="footer-disclaimer-box">
+          <p data-i18n="footerDisclaimerDesc">
+            SCHOLAR GATE is an informational non-profit student project. It is not affiliated with, authorized, or endorsed by any government department. It does not submit applications or collect fees.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p data-i18n="footerCopyright">SCHOLAR GATE — Community Service Project. Built with HTML5, CSS3, and Vanilla JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/matching.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

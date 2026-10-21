@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCHOLAR GATE — Scholarship & Sponsorship Portal</title>
+  <meta name="description" content="Centralized, rule-based scholarship and sponsorship portal for school students in Andhra Pradesh, Telangana, and across India. Find verified government schemes, document checklists, and official portals.">
+  <meta name="keywords" content="Scholarship, Andhra Pradesh, Telangana, NSP, Pre-Matric, NMMSS, PM YASASVI, ePASS, JnanaBhumi, School Scholarships, India">
+  <meta name="author" content="SCHOLAR GATE CSP Team">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="lang-en">
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand-wrapper" id="brandLink">
+        <div class="brand-logo-icon" aria-hidden="true">
+          <!-- Graduation Cap & Portal Icon -->
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18C5 19.94 8.13 22 12 22C15.87 22 19 19.94 19 17.18V13.18L12 17L5 13.18Z" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title" data-i18n="brandTitle">SCHOLAR GATE</span>
+          <span class="brand-subtitle" data-i18n="brandSubtitle">Scholarship & Sponsorship Portal</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active" data-nav="home" data-i18n="navHome">Home</a>
+        <a href="#featured" class="nav-link" data-nav="featured" data-i18n="navFeatured">Featured</a>
+        <a href="#find" class="nav-link" data-nav="find" data-i18n="navFind">Find Scholarships</a>
+        <a href="#results" class="nav-link" data-nav="results" data-i18n="navBrowse">Browse Schemes</a>
+        <a href="#saved" class="nav-link" data-nav="saved">
+          <span data-i18n="navSaved">Saved</span>
+          <span class="saved-count-badge" id="savedCountBadge">0</span>
+        </a>
+        <a href="#faq" class="nav-link" data-nav="faq" data-i18n="navFaq">FAQ & Help</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Language Toggle -->
+        <button type="button" class="lang-toggle-btn" id="langToggleBtn" title="Switch language to Telugu / ఇంగ్లీష్ మార్చండి">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span id="langLabel">తెలుగు</span>
+        </button>
+
+        <!-- Prototype Data Admin Button -->
+        <button type="button" class="btn-secondary" id="openAdminModalBtn" style="padding: 0.4rem 0.8rem; font-size: 0.82rem;" title="Demo Prototype Data Inspection">
+          ⚙️ Demo Data
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Demo Profile Quick Bar -->
+  <section class="demo-bar-wrapper">
+    <div class="container demo-bar">
+      <span class="demo-bar-label">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h2v2h-2zm0-10h2v8h-2z"/>
+        </svg>
+        <span data-i18n="demoBarTitle">Try Demonstration Profiles:</span>
+      </span>
+      <button type="button" class="demo-chip" data-profile="profile_a" data-i18n="demoProfileA">Profile A: AP Rural SC (Class 8)</button>
+      <button type="button" class="demo-chip" data-profile="profile_b" data-i18n="demoProfileB">Profile B: Telangana ST (Class 10)</button>
+      <button type="button" class="demo-chip" data-profile="profile_c" data-i18n="demoProfileC">Profile C: Disability Support (Class 9)</button>
+      <button type="button" class="demo-chip" data-profile="profile_d" data-i18n="demoProfileD">Profile D: Beedi Worker Parent (Class 7)</button>
+      <button type="button" class="demo-chip" data-profile="profile_e" data-i18n="demoProfileE">Profile E: Higher Income (Class 11)</button>
+    </div>
+  </section>
+
+  <!-- Main Content Body -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container hero-content">
+        <div class="badge-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z"/>
+          </svg>
+          <span data-i18n="heroBadge">College & Community Service Project (CSP)</span>
+        </div>
+
+        <h1 class="hero-title" data-i18n="heroTitle">Find Scholarships That Match Your Future.</h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">A dedicated, transparent portal helping school students in Andhra Pradesh, Telangana, and across India discover verified government scholarships, document checklists, and official application portals.</p>
+
+        <!-- CTA Group -->
+        <div class="hero-cta-group">
+          <a href="#find" class="btn-primary" id="heroCtaFindBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span data-i18n="heroCtaFind">Find My Scholarships</span>
+          </a>
+          <a href="#results" class="btn-secondary" id="heroCtaBrowseBtn">
+            <span data-i18n="heroCtaBrowse">Browse All Schemes</span>
+          </a>
+        </div>
+
+        <!-- Search Box -->
+        <div class="hero-search-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" class="hero-search-input" id="heroSearchInput" placeholder="Search scholarship name, ministry, or keyword..." data-i18n-ph="heroQuickSearchPlaceholder">
+        </div>
+
+        <!-- Quick State Filters -->
+        <div class="hero-quick-filters">
+          <button type="button" class="quick-pill active" data-state-filter="" data-i18n="heroQuickFilterAll">All Schemes</button>
+          <button type="button" class="quick-pill" data-state-filter="Andhra Pradesh" data-i18n="heroQuickFilterAP">Andhra Pradesh</button>
+          <button type="button" class="quick-pill" data-state-filter="Telangana" data-i18n="heroQuickFilterTS">Telangana</button>
+          <button type="button" class="quick-pill" data-state-filter="All India" data-i18n="heroQuickFilterIndia">All India Central</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section-padding" style="background:#FFFFFF;">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="howItWorksTitle">How It Works</h2>
+          <p class="section-subtitle" data-i18n="howItWorksSubtitle">Three simple steps to discover financial support for your schooling.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="8.5" cy="7.5" r="4"></circle>
+                <line x1="20" y1="8" x2="20" y2="14"></line>
+                <line x1="23" y1="11" x2="17" y2="11"></line>
+              </svg>
+            </div>
+            <h3 class="step-title" data-i18n="step1Title">1. Enter Student Details</h3>
+            <p class="step-desc" data-i18n="step1Desc">Share simple school details like your class, state, and category. No sensitive data or documents required.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="step-title" data-i18n="step2Title">2. Discover Potential Matches</h3>
+            <p class="step-desc" data-i18n="step2Desc">Our transparent rule engine compares your profile against verified government scheme requirements.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h3 class="step-title" data-i18n="step3Title">3. Check Documents & Apply</h3>
+            <p class="step-desc" data-i18n="step3Desc">Track your required certificates with interactive checklists and jump directly to official government portals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Flagship Scholarships Section -->
+    <section class="featured-section" id="featured">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge-tag" style="background:#EFF6FF; color:var(--primary-blue); border-color:#BFDBFE; margin-bottom:0.5rem;">
+            <span>★</span>
+            <span data-i18n="featuredBadgeFlagship">Flagship Schemes</span>
+          </div>
+          <h2 class="section-title" data-i18n="featuredTitle">Featured Flagship Scholarships</h2>
+          <p class="section-subtitle" data-i18n="featuredSubtitle">Key pre-matric government assistance programs with high coverage and impact across AP, TS, and All India.</p>
+        </div>
+
+        <div class="featured-grid">
+          <!-- Featured 1: NMMSS -->
+          <div class="featured-card">
+            <div class="featured-card-tag">All India • Merit-cum-Means</div>
+            <h3 class="featured-card-title">National Means-cum-Merit Scholarship (NMMSS)</h3>
+            <p class="featured-card-authority">Ministry of Education, Govt of India</p>
+            <div class="featured-amount-box">
+              <span class="featured-amount-label">Annual Stipend</span>
+              <span class="featured-amount-value">₹12,000 / year</span>
+            </div>
+            <div class="featured-card-meta">
+              <div class="featured-meta-row">
+                <span>Classes:</span>
+                <strong>Classes 8 to 12</strong>
+              </div>
+              <div class="featured-meta-row">
+                <span>Max Income:</span>
+                <strong>₹3,50,000/yr</strong>
+              </div>
+              <div class="featured-meta-row">
+                <span>Beneficiary:</span>
+                <strong style="text-align:right;">Rural & EWS Students</strong>
+              </div>
+            </div>
+            <div class="featured-card-actions">
+              <button type="button" class="btn-card-details btn-featured-details" data-id="nmmss" data-i18n="featuredViewDetails">View Details & Checklist</button>
+              <button type="button" class="btn-secondary btn-featured-check" data-profile="profile_a" data-i18n="featuredCheckEligibility">Check Eligibility</button>
+            </div>
+          </div>
+
+          <!-- Featured 2: AP JnanaBhumi Pre-Matric -->
+          <div class="featured-card">
+            <div class="featured-card-tag" style="background:#FEF3C7; color:#92400E;">Andhra Pradesh • State Welfare</div>
+            <h3 class="featured-card-title">AP JnanaBhumi Pre-Matric Scholarship</h3>
+            <p class="featured-card-authority">Social & BC Welfare Depts, Govt of AP</p>
+            <div class="featured-amount-box" style="background:#FFFBEB; border-color:#FDE68A;">
+              <span class="featured-amount-label">Annual Support</span>
+              <span class="featured-amount-value" style="color:#B45309;">₹1,000 – ₹3,500 / year</span>
+            </div>
+            <div class="featured-card-meta">
+              <div class="featured-meta-row">
+                <span>Classes:</span>
+                <strong>Classes 5 to 10</strong>
+              </div>
+              <div class="featured-meta-row">
+                <span>Target:</span>
+                <strong>SC / ST / BC / Minorities</strong>
+              </div>
+              <div class="featured-meta-row">
+                <span>Portal:</span>
+                <strong>jnanabhumi.ap.gov.in</strong>
+              </div>
+            </div>
+            <div class="featured-card-actions">
+              <button type="button" class="btn-card-details btn-featured-details" data-id="ap_jnanabhumi_prematric" data-i18n="featuredViewDetails">View Details & Checklist</button>
+              <button type="button" class="btn-secondary btn-featured-check" data-profile="profile_a" data-i18n="featuredCheckEligibility">Check Eligibility</button>
+            </div>
+          </div>
+
+          <!-- Featured 3: Telangana ePASS Pre-Matric -->
+          <div class="featured-card">
+            <div class="featured-card-tag" style="background:#F0FDFA; color:#0D9488;">Telangana • State Welfare</div>
+            <h3 class="featured-card-title">Telangana ePASS Pre-Matric Scholarship</h3>
+            <p class="featured-card-authority">Welfare Departments, Govt of Telangana</p>
+            <div class="featured-amount-box">
+              <span class="featured-amount-label">Annual Support</span>
+              <span class="featured-amount-value">Up to ₹3,500 / year</span>
+            </div>
+            <div class="featured-card-meta">
+              <div class="featured-meta-row">
+                <span>Classes:</span>
+                <strong>Classes 5 to 10</strong>
+              </div>
+              <div class="featured-meta-row">
+                <span>Target:</span>
+                <strong>SC / ST / BC / Disabled</strong>
+              </div>
+              <div class="featured-meta-row">
+                <span>Portal:</span>
+                <strong>telanganaepass.cgg.gov.in</strong>
+              </div>
+            </div>
+            <div class="featured-card-actions">
+              <button type="button" class="btn-card-details btn-featured-details" data-id="telangana_epass_prematric" data-i18n="featuredViewDetails">View Details & Checklist</button>
+              <button type="button" class="btn-secondary btn-featured-check" data-profile="profile_b" data-i18n="featuredCheckEligibility">Check Eligibility</button>
+            </div>
+          </div>
+
+          <!-- Featured 4: PM YASASVI Pre-Matric -->
+          <div class="featured-card">
+            <div class="featured-card-tag">All India • DBT Welfare</div>
+            <h3 class="featured-card-title">PM YASASVI Pre-Matric Scholarship</h3>
+            <p class="featured-card-authority">Ministry of Social Justice & Empowerment, GoI</p>
+            <div class="featured-amount-box">
+              <span class="featured-amount-label">Direct DBT Allowance</span>
+              <span class="featured-amount-value">₹4,000 / year</span>
+            </div>
+            <div class="featured-card-meta">
+              <div class="featured-meta-row">
+                <span>Classes:</span>
+                <strong>Classes 9 & 10</strong>
+              </div>
+              <div class="featured-meta-row">
+                <span>Max Income:</span>
+                <strong>₹2,50,000/yr</strong>
+              </div>
+              <div class="featured-meta-row">
+                <span>Target:</span>
+                <strong>OBC / EBC / DNT Students</strong>
+              </div>
+            </div>
+            <div class="featured-card-actions">
+              <button type="button" class="btn-card-details btn-featured-details" data-id="pmyasasvi_prematric" data-i18n="featuredViewDetails">View Details & Checklist</button>
+              <button type="button" class="btn-secondary btn-featured-check" data-profile="profile_b" data-i18n="featuredCheckEligibility">Check Eligibility</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Eligibility Form Section (Wizard) -->
+    <section class="section-padding wizard-section" id="find">
+      <div class="container">
+        <div class="wizard-card">
+          <!-- Wizard Header -->
+          <div class="wizard-header">
+            <h2 class="section-title" style="font-size: 1.6rem; margin-bottom: 0.25rem;" data-i18n="formTitle">Student Eligibility Checker</h2>
+            <p class="section-subtitle" style="font-size: 0.92rem;" data-i18n="formSubtitle">Answer a few basic questions to see which government scholarships you may qualify for.</p>
+
+            <!-- Progress Indicator -->
+            <div class="progress-steps-bar">
+              <div class="progress-line-fill" id="progressLineFill"></div>
+              
+              <div class="step-indicator-item active" data-step-dot="1">
+                <div class="step-bubble">1</div>
+                <span class="step-indicator-label" data-i18n="stepIndicator1">Academic Details</span>
+              </div>
+
+              <div class="step-indicator-item" data-step-dot="2">
+                <div class="step-bubble">2</div>
+                <span class="step-indicator-label" data-i18n="stepIndicator2">Category & Income</span>
+              </div>
+
+              <div class="step-indicator-item" data-step-dot="3">
+                <div class="step-bubble">3</div>
+                <span class="step-indicator-label" data-i18n="stepIndicator3">Special Support</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Body -->
+          <form id="eligibilityForm" class="wizard-body" novalidate>
+
+            <!-- STEP 1: Academic & Basic Details -->
+            <div class="wizard-step-pane active" id="wizardStep1">
+              <div class="form-grid">
+                
+                <!-- Student Name -->
+                <div class="form-group form-group-full">
+                  <label for="studentName" class="form-label" data-i18n="fieldName">Student Name (Optional)</label>
+                  <input type="text" id="studentName" name="studentName" class="form-input" placeholder="e.g., Anitha or leave blank" data-i18n-ph="fieldNamePlaceholder">
+                  <span class="form-helper" data-i18n="fieldNameHelp">Only used to personalize your demonstration results. Not stored externally.</span>
+                </div>
+
+                <!-- State -->
+                <div class="form-group">
+                  <label for="studentState" class="form-label">
+                    <span data-i18n="fieldState">Current State of Residence / Schooling</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <select id="studentState" name="studentState" class="form-select" required>
+                    <option value="" data-i18n="fieldStateSelect">-- Select State --</option>
+                    <option value="Andhra Pradesh" data-i18n="fieldStateAP">Andhra Pradesh</option>
+                    <option value="Telangana" data-i18n="fieldStateTS">Telangana</option>
+                    <option value="Other Indian state" data-i18n="fieldStateOther">Other Indian State</option>
+                  </select>
+                  <span class="form-helper" data-i18n="fieldStateHelp">Determines eligibility for state-specific schemes like AP JnanaBhumi or Telangana ePASS.</span>
+                </div>
+
+                <!-- Class / Grade -->
+                <div class="form-group">
+                  <label for="currentClass" class="form-label">
+                    <span data-i18n="fieldClass">Current Class / Grade</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <select id="currentClass" name="currentClass" class="form-select" required>
+                    <option value="" data-i18n="fieldClassSelect">-- Select Current Class --</option>
+                    <option value="1">Class 1</option>
+                    <option value="2">Class 2</option>
+                    <option value="3">Class 3</option>
+                    <option value="4">Class 4</option>
+                    <option value="5">Class 5</option>
+                    <option value="6">Class 6</option>
+                    <option value="7">Class 7</option>
+                    <option value="8">Class 8</option>
+                    <option value="9">Class 9</option>
+                    <option value="10">Class 10</option>
+                    <option value="11">Class 11</option>
+                    <option value="12">Class 12</option>
+                  </select>
+                  <span class="form-helper" data-i18n="fieldClassHelp">Identifies whether you qualify for primary, middle, or secondary pre-matric schemes.</span>
+                </div>
+
+                <!-- School Type -->
+                <div class="form-group form-group-full">
+                  <label for="schoolType" class="form-label">
+                    <span data-i18n="fieldSchoolType">School Institution Type</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <select id="schoolType" name="schoolType" class="form-select" required>
+                    <option value="" data-i18n="fieldSchoolTypeSelect">-- Select School Type --</option>
+                    <option value="Government" data-i18n="schoolTypeGovt">Government School (Mandal/Zilla Parishad/Municipality)</option>
+                    <option value="Government-aided" data-i18n="schoolTypeAided">Government-Aided School</option>
+                    <option value="Recognized private school" data-i18n="schoolTypePrivate">Recognized Private School</option>
+                    <option value="Not sure" data-i18n="schoolTypeNotSure">Not sure / Others</option>
+                  </select>
+                  <span class="form-helper" data-i18n="fieldSchoolTypeHelp">Schemes like NMMSS specifically require Government or Govt-aided schools.</span>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- STEP 2: Category & Family Income -->
+            <div class="wizard-step-pane" id="wizardStep2">
+              <div class="form-grid">
+
+                <!-- Social Category -->
+                <div class="form-group form-group-full">
+                  <label for="socialCategory" class="form-label">
+                    <span data-i18n="fieldCategory">Social Category / Community</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <select id="socialCategory" name="socialCategory" class="form-select" required>
+                    <option value="" data-i18n="fieldCategorySelect">-- Select Social Category --</option>
+                    <option value="SC" data-i18n="categorySC">Scheduled Caste (SC)</option>
+                    <option value="ST" data-i18n="categoryST">Scheduled Tribe (ST)</option>
+                    <option value="OBC/BC" data-i18n="categoryOBC">Backward Classes (OBC / BC)</option>
+                    <option value="EBC or another eligible category" data-i18n="categoryEBC">Economically Backward Class (EBC / DNT)</option>
+                    <option value="Minority" data-i18n="categoryMinority">Minority (Muslim, Christian, Sikh, Buddhist, Jain, Parsi)</option>
+                    <option value="General/Other" data-i18n="categoryGeneral">General / Other</option>
+                    <option value="Prefer not to say" data-i18n="categoryPreferNot">Prefer not to say</option>
+                  </select>
+                  <span class="form-helper" data-i18n="fieldCategoryHelp">Important for welfare department pre-matric programs. 'Prefer not to say' will be marked for verification rather than excluded.</span>
+                </div>
+
+                <!-- Family Income -->
+                <div class="form-group form-group-full">
+                  <label for="familyIncome" class="form-label">
+                    <span data-i18n="fieldIncome">Annual Family Income Range</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <select id="familyIncome" name="familyIncome" class="form-select" required>
+                    <option value="" data-i18n="fieldIncomeSelect">-- Select Income Range --</option>
+                    <option value="Below ₹1 lakh" data-i18n="incomeUnder1L">Below ₹1,00,000 (Below ₹1 Lakh)</option>
+                    <option value="₹1 lakh–₹2.5 lakh" data-i18n="income1To25L">₹1,00,000 – ₹2,50,000 (₹1L – ₹2.5L)</option>
+                    <option value="₹2.5 lakh–₹3.5 lakh" data-i18n="income25To35L">₹2,50,000 – ₹3,50,000 (₹2.5L – ₹3.5L)</option>
+                    <option value="Above ₹3.5 lakh" data-i18n="incomeAbove35L">Above ₹3,50,000 (Above ₹3.5 Lakhs)</option>
+                    <option value="Not sure" data-i18n="incomeNotSure">Not sure</option>
+                  </select>
+                  <span class="form-helper" data-i18n="fieldIncomeHelp">Most welfare scholarships have maximum family income caps ranging between ₹1.2 Lakh and ₹3.5 Lakhs.</span>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- STEP 3: Special Eligibility, Occupation & Academic -->
+            <div class="wizard-step-pane" id="wizardStep3">
+              <div class="form-grid">
+
+                <!-- Disability -->
+                <div class="form-group form-group-full">
+                  <label class="form-label">
+                    <span data-i18n="fieldDisability">Do you have a certified benchmark disability (40%+ with UDID)?</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <div class="radio-group-vertical">
+                    <label class="radio-card-label">
+                      <input type="radio" name="hasDisability" value="Yes">
+                      <span class="radio-custom-text" data-i18n="disabilityYes">Yes, holding / applying for 40%+ disability certificate</span>
+                    </label>
+                    <label class="radio-card-label">
+                      <input type="radio" name="hasDisability" value="No" checked>
+                      <span class="radio-custom-text" data-i18n="disabilityNo">No</span>
+                    </label>
+                    <label class="radio-card-label">
+                      <input type="radio" name="hasDisability" value="Prefer not to say">
+                      <span class="radio-custom-text" data-i18n="disabilityPreferNot">Prefer not to say</span>
+                    </label>
+                  </div>
+                  <span class="form-helper" data-i18n="fieldDisabilityHelp">Unlocks dedicated Department of Empowerment of Persons with Disabilities (DEPwD) pre-matric stipends.</span>
+                </div>
+
+                <!-- Parent Occupation -->
+                <div class="form-group">
+                  <label for="parentOccupation" class="form-label">
+                    <span data-i18n="fieldOccupation">Parent / Guardian Employment Sector</span>
+                  </label>
+                  <select id="parentOccupation" name="parentOccupation" class="form-select">
+                    <option value="None of these" data-i18n="occupationNone">None of these / General Employment</option>
+                    <option value="Beedi worker" data-i18n="occupationBeedi">Registered Beedi Worker</option>
+                    <option value="Eligible mine worker" data-i18n="occupationMine">Eligible Non-coal Mine Worker (Iron/Manganese/Limestone)</option>
+                    <option value="Cine worker" data-i18n="occupationCine">Cine Worker</option>
+                    <option value="Not sure" data-i18n="occupationNotSure">Not sure</option>
+                  </select>
+                  <span class="form-helper" data-i18n="fieldOccupationHelp">Ministry of Labour provides dedicated education assistance to children of these registered workers.</span>
+                </div>
+
+                <!-- Academic Performance -->
+                <div class="form-group">
+                  <label for="academicScore" class="form-label">
+                    <span data-i18n="fieldAcademicPerf">Academic Performance / Examination Status</span>
+                  </label>
+                  <select id="academicScore" name="academicScore" class="form-select">
+                    <option value="Above 55%" data-i18n="academicPass55">Scored 55% or above in previous class (50% for SC/ST)</option>
+                    <option value="NMMS qualified" data-i18n="academicPassExam">Appeared / Qualified in State NMMS Selection Exam</option>
+                    <option value="General pass" data-i18n="academicGeneral">Passed previous class / Regular attendance</option>
+                  </select>
+                  <span class="form-helper" data-i18n="fieldAcademicPerfHelp">Required for merit-cum-means selection and annual renewals.</span>
+                </div>
+
+              </div>
+
+              <!-- Safe & Privacy First Guarantee -->
+              <div class="privacy-notice-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <div>
+                  <strong>Privacy & Integrity Guarantee:</strong> SCHOLAR GATE runs 100% locally in your browser. We never collect Aadhaar numbers, bank account details, caste certificates, or document uploads.
+                </div>
+              </div>
+            </div>
+
+            <!-- Wizard Footer Buttons -->
+            <div class="wizard-footer">
+              <button type="button" class="btn-secondary" id="formResetBtn" data-i18n="btnReset">Reset Form</button>
+
+              <div class="wizard-footer-right">
+                <button type="button" class="btn-secondary" id="formPrevBtn" style="display:none;" data-i18n="btnPrev">Back</button>
+                <button type="button" class="btn-primary" id="formNextBtn" data-i18n="btnNext">Continue</button>
+                <button type="submit" class="btn-primary" id="formSubmitBtn" style="display:none;" data-i18n="btnFind">Find Matching Scholarships</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Impact Section -->
+    <section class="impact-section">
+      <div class="container">
+        <div class="impact-header">
+          <h2 class="section-title" data-i18n="impactTitle">Empowering Rural & Economically Weaker Students</h2>
+          <p class="section-subtitle" data-i18n="impactSubtitle">Bridging the information divide for school students across rural Andhra Pradesh and Telangana.</p>
+        </div>
+
+        <div class="impact-grid">
+          <div class="impact-card">
+            <div class="impact-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 14 14"></polyline>
+              </svg>
+            </div>
+            <h3 class="impact-card-title" data-i18n="impactPoint1Title">Zero Missing Opportunities</h3>
+            <p class="impact-card-desc" data-i18n="impactPoint1Desc">Thousands of students drop out after Class 8 or 10 simply because they did not know about available pre-matric stipends.</p>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="impact-card-title" data-i18n="impactPoint2Title">100% Free & Transparent</h3>
+            <p class="impact-card-desc" data-i18n="impactPoint2Desc">No middlemen, no application fees, and no third-party account requirements. Direct access to official portals.</p>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="impact-card-title" data-i18n="impactPoint3Title">Safe & Privacy-First</h3>
+            <p class="impact-card-desc" data-i18n="impactPoint3Desc">We never ask for Aadhaar numbers, caste certificate uploads, or bank passwords. Everything runs privately on your device.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scholarship Matching Results Section -->
+    <section class="results-section" id="results">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="section-header" style="text-align: left; max-width: 100%; margin-bottom: 1.5rem;">
+          <h2 class="section-title" data-i18n="resultsTitle">Your Scholarship Matches</h2>
+        </div>
+
+        <!-- Mandatory Preliminary Guidance Disclaimer -->
+        <div class="preliminary-guidance-banner" role="alert">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+          </svg>
+          <span data-i18n="resultsDisclaimer">Preliminary Guidance: Matches are calculated from your profile inputs. Final eligibility is determined exclusively by the respective government department.</span>
+        </div>
+
+        <!-- Filters & Sorting Toolbar -->
+        <div class="results-controls-bar">
+          <div class="filter-group-row">
+            <!-- State Filter -->
+            <select id="filterState" class="filter-select">
+              <option value="" data-i18n="filterStateAll">All States</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Telangana">Telangana</option>
+              <option value="All India">All India Central</option>
+            </select>
+
+            <!-- Class Filter -->
+            <select id="filterClass" class="filter-select">
+              <option value="" data-i18n="filterClassAll">All Classes</option>
+              <option value="5">Class 5</option>
+              <option value="6">Class 6</option>
+              <option value="7">Class 7</option>
+              <option value="8">Class 8</option>
+              <option value="9">Class 9</option>
+              <option value="10">Class 10</option>
+              <option value="11">Class 11</option>
+              <option value="12">Class 12</option>
+            </select>
+
+            <!-- Category Filter -->
+            <select id="filterCategory" class="filter-select">
+              <option value="" data-i18n="filterCategoryAll">All Categories</option>
+              <option value="SC">SC</option>
+              <option value="ST">ST</option>
+              <option value="OBC">OBC / BC</option>
+              <option value="Minority">Minority</option>
+              <option value="General">General</option>
+            </select>
+
+            <!-- Status Filter -->
+            <select id="filterStatus" class="filter-select">
+              <option value="" data-i18n="filterStatusAll">All Statuses</option>
+              <option value="potential_match" data-i18n="badgePotentialMatch">Potential Match</option>
+              <option value="needs_verification" data-i18n="badgeNeedsVerification">Needs Verification</option>
+              <option value="not_matched" data-i18n="badgeNotMatched">Not Currently Matched</option>
+            </select>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:1rem;">
+            <!-- Sort Options -->
+            <select id="sortOption" class="filter-select">
+              <option value="score" data-i18n="sortScore">Sort: Best Portal Match</option>
+              <option value="name" data-i18n="sortName">Sort: Name (A-Z)</option>
+              <option value="class" data-i18n="sortClass">Sort: Class Level</option>
+            </select>
+
+            <span class="results-count-text" id="resultsCount">Showing 0 schemes</span>
+          </div>
+        </div>
+
+        <!-- Cards Grid Container -->
+        <div class="cards-grid" id="scholarshipsContainer">
+          <!-- Dynamically populated via app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Saved Scholarships Section -->
+    <section class="saved-section" id="saved" style="background:#FFFFFF; border-top:1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header" style="text-align:left; margin-bottom: 2rem;">
+          <h2 class="section-title" data-i18n="savedTitle">Saved Scholarships</h2>
+          <p class="section-subtitle" data-i18n="savedSubtitle">Your bookmarked scholarships for quick reference and checklist completion.</p>
+        </div>
+
+        <div id="savedCardsContainer" class="cards-grid">
+          <!-- Dynamically populated via app.js -->
+        </div>
+
+        <div id="savedEmptyState" class="empty-state-box" style="display:none;">
+          <div class="empty-state-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="empty-state-title" data-i18n="savedEmptyTitle">No saved scholarships yet</h3>
+          <p class="empty-state-desc" data-i18n="savedEmptyDesc">Click the bookmark icon on any scholarship card to save it here for quick access.</p>
+          <a href="#results" class="btn-primary" data-i18n="heroCtaBrowse">Browse All Schemes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ and Help Section -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="faqTitle">Frequently Asked Questions & Help</h2>
+          <p class="section-subtitle" data-i18n="faqSubtitle">Straightforward answers for school students, parents, and community workers.</p>
+        </div>
+
+        <!-- FAQ Search Box -->
+        <div class="faq-search-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:0.6rem; color:var(--text-light);">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="faqSearchInput" placeholder="Search questions by topic (e.g., income, documents, AP, TS)..." data-i18n-ph="faqSearchPlaceholder">
+        </div>
+
+        <!-- Accordion Container -->
+        <div class="faq-accordion" id="faqAccordion">
+          <!-- Rendered by app.js -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scholarship Details & Checklist Modal -->
+  <div class="modal-backdrop" id="detailsModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-header-text">
+          <span class="match-status-badge" id="modalStatusBadge" style="margin-bottom:0.5rem;">Potential Match</span>
+          <h3 class="modal-title" id="modalTitle">Scholarship Title</h3>
+          <p class="modal-subtitle" id="modalAuthority">Administering Authority</p>
+        </div>
+        <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close details popup">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        
+        <!-- Match Explanation -->
+        <div class="card-explanation-box" id="modalExplanationBox"></div>
+
+        <!-- Purpose & Benefits -->
+        <div class="modal-section">
+          <h4 class="modal-section-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <span data-i18n="modalPurpose">Scheme Purpose & Overview</span>
+          </h4>
+          <p id="modalPurposeText" style="font-size:0.95rem; color:var(--text-main); line-height:1.6;"></p>
+        </div>
+
+        <!-- Academic & School Conditions -->
+        <div class="modal-section">
+          <h4 class="modal-section-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            <span data-i18n="modalAcademicConditions">Academic & School Conditions</span>
+          </h4>
+          <ul id="modalAcademicList" class="steps-list"></ul>
+        </div>
+
+        <!-- Document Checklist (LocalStorage Saved) -->
+        <div class="modal-section">
+          <div class="modal-checklist-wrapper">
+            <div class="checklist-header">
+              <div>
+                <h4 style="font-size: 1rem; font-weight: 700; color: var(--primary-navy);" data-i18n="modalChecklistTitle">Document Checklist (Save Your Progress)</h4>
+                <p style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="modalChecklistSubtitle">Commonly requested documents — verify official scheme guidelines.</p>
+              </div>
+              <button type="button" class="btn-secondary" id="resetChecklistBtn" style="padding: 0.35rem 0.75rem; font-size: 0.78rem;" data-i18n="btnResetChecklist">Reset Checklist</button>
+            </div>
+            <div class="checklist-items-list" id="modalChecklistItems"></div>
+          </div>
+        </div>
+
+        <!-- How To Apply -->
+        <div class="modal-section">
+          <h4 class="modal-section-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span data-i18n="modalHowToApply">Step-by-Step Official Application Process</span>
+          </h4>
+          <ol id="modalHowToApplyList" class="steps-list" style="padding-left: 1.5rem;"></ol>
+        </div>
+
+        <!-- Official Links (Both separate!) -->
+        <div class="official-links-box">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="link-button-official" id="modalOfficialInfoLink">
+            <span style="display:flex; align-items:center; gap:0.4rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              <span data-i18n="modalOfficialInfo">Official Scheme Information Website</span>
+            </span>
+            <span>↗</span>
+          </a>
+
+          <a href="#" target="_blank" rel="noopener noreferrer" class="link-button-official" id="modalOfficialApplyLink" style="background:var(--primary-blue); color:#FFFFFF; border-color:var(--primary-blue);">
+            <span style="display:flex; align-items:center; gap:0.4rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+              <strong data-i18n="modalOfficialApply">Official Online Application Portal</strong>
+            </span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <div style="font-size:0.8rem; color:#64748B; background:#F1F5F9; padding:0.75rem 1rem; border-radius:var(--radius-sm);" data-i18n="modalNotice">
+          Note: Government guidelines and portal application dates change periodically. Always verify with your school headmaster or official portal before applying.
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-verified-info">
+          <span data-i18n="modalLastVerified">Information Last Verified on:</span>
+          <strong id="modalLastVerifiedDate">2026-03-15</strong>
+        </div>
+        <button type="button" class="btn-secondary" id="modalCloseFooterBtn" data-i18n="btnClose">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prototype Demo Data Management Modal -->
+  <div class="modal-backdrop" id="adminModal" role="dialog" aria-modal="true">
+    <div class="modal-container" style="max-width: 720px;">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title">Demo Prototype Data Management</h3>
+          <p class="modal-subtitle">Evaluate, inspect or edit scholarship records locally (Developer / Demonstration Mode)</p>
+        </div>
+        <button type="button" class="modal-close-btn" id="adminModalCloseBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="background:#FFFBEB; border:1px solid #FDE68A; padding:0.75rem 1rem; border-radius:var(--radius-md); font-size:0.85rem; color:#92400E; margin-bottom:1rem;">
+          <strong>Prototype Disclaimer:</strong> This demonstration manager runs completely in client-side memory and local storage. No unauthenticated changes are sent to a live production database.
+        </div>
+        
+        <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.4rem;">Current Active Dataset (JSON Inspection)</h4>
+        <div class="admin-json-box" id="adminJsonView"></div>
+
+        <div style="display:flex; gap:0.75rem; margin-top:1.25rem;">
+          <button type="button" class="btn-primary" id="adminAddMockBtn" style="font-size:0.85rem; padding:0.6rem 1rem;">
+            + Add Test Scheme Record
+          </button>
+          <button type="button" class="btn-secondary" id="adminResetDatasetBtn" style="font-size:0.85rem; padding:0.6rem 1rem;">
+            Reset to Default Dataset
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span style="font-size:0.8rem; color:var(--text-muted);">Changes persist locally for this browser session.</span>
+        <button type="button" class="btn-secondary" id="adminModalCloseFooterBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- About Project -->
+      <div>
+        <h4 class="footer-col-title" data-i18n="footerAboutTitle">About SCHOLAR GATE</h4>
+        <p style="font-size: 0.9rem; line-height: 1.6; color: #94A3B8; margin-bottom: 1rem;" data-i18n="footerAboutDesc">
+          SCHOLAR GATE is a student-initiated College & Community Service Project (CSP) aimed at democratizing access to verified Indian school scholarships.
+        </p>
+        <div style="font-size: 0.85rem; color: #38BDF8;">
+          Primary Focus: Andhra Pradesh, Telangana & All India Central Government Schemes
+        </div>
+      </div>
+
+      <!-- Official Resources -->
+      <div>
+        <h4 class="footer-col-title" data-i18n="footerPortalsTitle">Official Portals</h4>
+        <ul class="footer-links-list">
+          <li><a href="https://scholarships.gov.in" target="_blank" rel="noopener noreferrer">National Scholarship Portal (NSP) ↗</a></li>
+          <li><a href="https://jnanabhumi.ap.gov.in" target="_blank" rel="noopener noreferrer">Andhra Pradesh JnanaBhumi ↗</a></li>
+          <li><a href="https://telanganaepass.cgg.gov.in" target="_blank" rel="noopener noreferrer">Telangana ePASS ↗</a></li>
+          <li><a href="https://socialjustice.gov.in" target="_blank" rel="noopener noreferrer">Ministry of Social Justice ↗</a></li>
+          <li><a href="https://tribal.nic.in" target="_blank" rel="noopener noreferrer">Ministry of Tribal Affairs ↗</a></li>
+          <li><a href="https://depwd.gov.in" target="_blank" rel="noopener noreferrer">Dept of Persons with Disabilities ↗</a></li>
+        </ul>
+      </div>
+
+      <!-- Disclaimer & Integrity -->
+      <div>
+        <h4 class="footer-col-title" data-i18n="footerDisclaimerTitle">Academic Project Disclaimer</h4>
+        <div class="footer-disclaimer-box">
+          <p data-i18n="footerDisclaimerDesc">
+            SCHOLAR GATE is an informational non-profit student project. It is not affiliated with, authorized, or endorsed by any government department. It does not submit applications or collect fees.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="container footer-bottom">
+      <p data-i18n="footerCopyright">SCHOLAR GATE — Community Service Project. Built with HTML5, CSS3, and Vanilla JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/matching.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+
